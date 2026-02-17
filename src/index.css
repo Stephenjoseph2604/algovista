@@ -26,3 +26,13 @@
     font-weight: normal; */
     src: local('Neofolia Regular'), url('neofolia.woff') format('woff');
     }
+
+    /* Add this at the bottom of your CSS file */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar { 
+  display: none;  /* Safari and Chrome */
+}
