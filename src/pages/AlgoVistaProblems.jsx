@@ -121,49 +121,18 @@ export default function AlgoVistaProblems() {
   const filteredProblems = filter === 'All' ? problems : problems.filter(p => p.difficulty === filter);
 
   return (
-    <div className="min-h-screen bg-white text-[#2b2e33] overflow-x-hidden" style={{ fontFamily: '"Syne", sans-serif' }}>
+    <div className="min-h-screen  text-[#2b2e33] overflow-x-hidden" style={{ fontFamily: '"Syne", sans-serif' }}>
 
       {/* ── dot-grid texture ── */}
       <div
-        className="fixed inset-0 z-0 pointer-events-none"
+        className="fixed inset-0 -z-1 pointer-events-none"
         style={{
           backgroundImage: 'radial-gradient(circle, #c1c4c866 1px, transparent 1px)',
           backgroundSize: '26px 26px',
         }}
       />
 
-      {/* ════════════════════════════════ NAVBAR ════════════════════════════════ */}
-      <nav className={`fixed top-3 left-4 right-4 z-50 rounded-2xl backdrop-blur-xl transition-all duration-300
-        ${scrolled
-          ? 'bg-white/95 border border-[#c1c4c8] shadow-[0_4px_24px_rgba(43,46,51,0.09)]'
-          : 'bg-white/75 border border-[#e8e9ea] shadow-[0_2px_12px_rgba(43,46,51,0.04)]'
-        }`}
-      >
-        <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="w-9 h-9 bg-[#2b2e33] rounded-xl grid place-items-center">
-              <Code2 size={17} color="#f5f6f7" />
-            </div>
-            <span className="font-extrabold text-[17px] tracking-tight">AlgoVista</span>
-          </div>
-
-          <div className="flex items-center gap-8">
-            <div className="hidden md:flex gap-7">
-              {['Topics','Solutions','Roadmap','Patterns'].map(l => (
-                <a key={l} href="#"
-                  className="text-[13px] font-semibold text-[#7b7f85] hover:text-[#2b2e33] transition-colors duration-200 no-underline">
-                  {l}
-                </a>
-              ))}
-            </div>
-            <button className="px-5 py-2 bg-[#2b2e33] text-[#f5f6f7] text-[13px] font-bold rounded-xl hover:bg-[#3d4147] transition-colors"
-              style={{ fontFamily: '"Syne",sans-serif' }}>
-              Start Free →
-            </button>
-          </div>
-        </div>
-      </nav>
-
+        
       {/* ════════════════════════════════ HERO ══════════════════════════════════ */}
       <section className="relative z-10 min-h-screen flex items-center pt-28 pb-20">
         <div className="max-w-7xl mx-auto px-8 w-full">
@@ -174,7 +143,7 @@ export default function AlgoVistaProblems() {
 
               {/* Badge */}
               <motion.div variants={fade} custom={0}>
-                <div className="inline-flex items-center gap-2 bg-[#f5f6f7] border border-[#c1c4c8] rounded-lg px-4 py-2">
+                <div className="inline-flex items-center gap-2  border border-[#c1c4c8] rounded-lg px-4 py-2">
                   <Terminal size={12} className="text-[#2b2e33]" />
                   <span className="text-[11px] font-bold text-[#7b7f85] tracking-[1px] uppercase">
                     All Problems
@@ -337,7 +306,7 @@ export default function AlgoVistaProblems() {
       </section>
 
       {/* ════════════════════════════════ CTA ═══════════════════════════════════ */}
-      {/* <section className="relative z-10 py-28 bg-[#f5f6f7] border-y border-[#c1c4c8]"> */}
+      <section className="relative z-10 pb-10  ">
 
         <div className="max-w-3xl mx-auto px-8 text-center">
           <motion.div
@@ -359,5 +328,6 @@ export default function AlgoVistaProblems() {
           </motion.div>
 
           </div>
+          </section>
           </div>
   )};

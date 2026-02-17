@@ -15,6 +15,7 @@ import {
   Target,
   Award,
   Link2,
+  Clipboard,
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
@@ -38,12 +39,12 @@ const ProblemDetailsPage = ({ problem }) => {
   return (
     <div className="min-h-screen bg-[var(--color-surface)]">
       {/* Compact Go Back Header */}
-      <div className="sticky top-0 z-50 bg-[var(--color-bg)]/95 backdrop-blur border-b border-[var(--color-muted)]/30">
+      <div className="sticky top-19 z-50  backdrop-blur ">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 py-3">
           <motion.button
             onClick={() => navigate(-1)}
             whileHover={{ scale: 1.02 }}
-            className="inline-flex items-center gap-2 bg-[var(--color-surface)] border border-[var(--color-muted)]/50 hover:border-[var(--color-primary)] px-4 py-2 rounded-xl font-semibold text-[var(--color-text)] shadow-sm hover:shadow-md transition-all"
+            className="inline-flex items-center gap-2 active:scale-90  border border-[var(--color-muted)]/50 hover:border-[var(--color-primary)] px-4 py-2 rounded-xl font-semibold text-[var(--color-text)] shadow-sm hover:shadow-md transition-all"
           >
             <ArrowLeft size={16} />
             <span className="hidden sm:inline">Problems</span>
@@ -58,7 +59,7 @@ const ProblemDetailsPage = ({ problem }) => {
           className="space-y-8 lg:space-y-12"
         >
           {/* Compact Hero */}
-          <section className="lg:flex lg:items-start lg:gap-6">
+          <section className="lg:flex lg:items-start lg:gap-6 ">
             <div className="w-14 h-14 lg:w-16 lg:h-16 bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-primary)]/90 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg mb-4 lg:mb-0">
               <Code2 size={20} color="#f5f6f7" />
             </div>
@@ -247,7 +248,7 @@ const ProblemDetailsPage = ({ problem }) => {
                       : "bg-[var(--color-card)] border border-[var(--color-muted)] hover:border-[var(--color-primary)] hover:shadow-lg"
                   }`}
                 >
-                  📋 Steps
+                  <Clipboard size={14} /> Steps
                 </motion.button>
                 <motion.button
                   onClick={() => setShowSteps(false)}
@@ -258,7 +259,7 @@ const ProblemDetailsPage = ({ problem }) => {
                       : "bg-[var(--color-card)] border border-[var(--color-muted)] hover:border-[var(--color-primary)] hover:shadow-lg"
                   }`}
                 >
-                  📝 Overview
+                  <BookOpen size={14} /> Overview
                 </motion.button>
               </div>
 
